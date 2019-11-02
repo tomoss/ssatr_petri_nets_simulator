@@ -1,13 +1,13 @@
 package model;
 
-public class Transition {
+public class Transition extends PNObject{
 
     int minTime;
     int maxTime;
     int delay;
     int tempTokens;
 
-    Transition(){
+    public Transition(){
         delay = -1;
     }
 
