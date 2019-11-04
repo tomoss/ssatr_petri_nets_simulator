@@ -2,16 +2,24 @@ package simulator;
 
 import model.Location;
 import model.Transition;
-import utils.FileSaver;
 
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class Simulator {
 
     int steps;
     PetriNet petriNet = PetriNet.getInstance();
+    FileWriter fileWriter;
+    PrintWriter printWriter;
 
-    public Simulator(int steps){
+    public Simulator(String fileName) throws IOException {
+        fileWriter = new FileWriter(fileName);
+        printWriter = new PrintWriter(fileWriter);
+    }
+
+    public void setSteps(int steps) {
         this.steps = steps;
     }
 
@@ -85,20 +93,28 @@ public class Simulator {
 
     public void simulatePetriNet(){
         for(int i = 0; i < steps; i++){
-            printPnState();
+            printPnState(i);
             checkAllTransitions();
         }
     }
 
-    void printPnState(){
+    void printPnState(int i){
         System.out.println();
-        String output;
+        printWriter.print("STEP "+i+" : ");
         petriNet.locations.forEach(location ->{
             System.out.print("| "+location.getId() + ": "+location.getTokens()+" ");
+            printWriter.print("| "+location.getId() + ": "+location.getTokens()+" ");
         });
+        printWriter.println();
         System.out.println();
         petriNet.transitions.forEach(transition -> System.out.print("| "+transition.getId()+" : "+transition.getTempTokens()+" "));
         System.out.println();
+        System.out.println();
+
+    }
+
+    public void closeFile(){
+        printWriter.close();
     }
 
 

@@ -1,5 +1,4 @@
 import simulator.Simulator;
-import utils.FileSaver;
 import utils.JsonLoader;
 
 import java.io.IOException;
@@ -11,12 +10,20 @@ public class Main {
         int steps = 15;
         JsonLoader jsonLoader = new JsonLoader();
 
-        if(jsonLoader.loadJson("src/files/no_delay.json")){
+        if(jsonLoader.loadJson("src/files/input.json")){
 
             System.out.println("JSON successfully loaded !");
-            Simulator simulator = new Simulator(steps);
-            simulator.simulatePetriNet();
-            
+            try {
+                Simulator simulator = new Simulator("src/files/output.txt");
+                simulator.setSteps(steps);
+                simulator.simulatePetriNet();
+                simulator.closeFile();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
         } else {
             System.out.println("JSON couldn't be loaded !");
         }
