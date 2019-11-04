@@ -11,4 +11,17 @@ public class Location extends PNObject {
     public void setTokens(int tokens) {
         this.tokens = tokens;
     }
+
+    public boolean decreaseTokens(){
+        if(tokens == 0){
+            return  false;
+        } else {
+            tokens--;
+            return true;
+        }
+    }
+
+    public void addToken(){
+        tokens++;
+    }
 }

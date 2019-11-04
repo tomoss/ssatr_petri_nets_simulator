@@ -27,4 +27,20 @@ public class PetriNet {
         transitions.add(transition);
     }
 
+    public List<Location> getLocations() {
+        return locations;
+    }
+
+    public List<Transition> getTransitions() {
+        return transitions;
+    }
+
+    public Location getLocationById(String id){
+        for(Location location : locations){
+            if(location.getId().equals(id))
+                return location;
+        }
+        System.out.println("Location not found");
+        return null;
+    }
 }

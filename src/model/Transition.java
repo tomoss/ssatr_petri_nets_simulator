@@ -42,4 +42,21 @@ public class Transition extends PNObject{
     public void setTempTokens(int tempTokens) {
         this.tempTokens = tempTokens;
     }
+
+    public void addTempToken(){
+        tempTokens++;
+    }
+
+    public boolean decreaseTokens(){
+        if(tempTokens == 0){
+            return  false;
+        } else {
+            tempTokens--;
+            return true;
+        }
+    }
+
+    public void setDelay(){
+
+    }
 }
