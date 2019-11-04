@@ -113,29 +113,29 @@
       },
       {
         "id":"T3",
-        "minTime":"0",
-        "maxTime":"0",
+        "minTime":"2",
+        "maxTime":"4",
         "input":["P3","P4"],
         "output":["P7"]
       },
       {
         "id":"T4",
-        "minTime":"0",
-        "maxTime":"0",
+        "minTime":"2",
+        "maxTime":"5",
         "input":["P5","P6"],
         "output":["P8"]
       },
       {
         "id":"T5",
-        "minTime":"0",
-        "maxTime":"0",
+        "minTime":"3",
+        "maxTime":"4",
         "input":["P6","P7"],
         "output":["P9"]
       },
       {
         "id":"T6",
-        "minTime":"0",
-        "maxTime":"0",
+        "minTime":"2",
+        "maxTime":"3",
         "input":["P4","P8"],
         "output":["P10"]
       },

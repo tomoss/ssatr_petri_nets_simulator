@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Random;
+
 public class Transition extends PNObject{
 
     int minTime;
@@ -8,7 +10,7 @@ public class Transition extends PNObject{
     int tempTokens;
 
     public Transition(){
-        delay = -1;
+        delay = 0;
     }
 
     public int getMinTime() {
@@ -29,10 +31,6 @@ public class Transition extends PNObject{
 
     public int getDelay() {
         return delay;
-    }
-
-    public void setDelay(int delay) {
-        this.delay = delay;
     }
 
     public int getTempTokens() {
@@ -57,6 +55,22 @@ public class Transition extends PNObject{
     }
 
     public void setDelay(){
+        if(minTime == 0 && minTime == 0){
+            System.out.println(id+" has no delay!");
+        } else {
+            Random r = new Random();
+            delay = r.nextInt((maxTime - minTime) + 1) + minTime;
+            System.out.println(id+" delay set: "+delay);
+        }
 
+    }
+
+    public void decreaseDelay(){
+        if(delay == 0){
+            System.out.println(id+" delay is already 0");
+        } else {
+            delay--;
+            System.out.println(id+" delay decreased ! now: "+delay);
+        }
     }
 }
