@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="080b135f-45be-4aea-acb8-60ab7dc7f8da" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulator/Simulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulator/Simulator.java" afterDir="false" />
-    </list>
+    <list default="true" id="080b135f-45be-4aea-acb8-60ab7dc7f8da" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +18,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="JAVA/" value="1" />
           <entry key="java" value="7" />
           <entry key="json" value="2" />
         </counts>
@@ -29,6 +27,7 @@
         <counts>
           <entry key="JAVA" value="7" />
           <entry key="JSON" value="2" />
+          <entry key="UML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -49,14 +48,130 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="13" column="47" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
+            <state relative-caret-position="391">
+              <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="uml://JAVA/">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JAVA</ID>
+              <OriginalElement />
+              <nodes>
+                <node x="346.1875" y="454.0">simulator.PetriNet</node>
+                <node x="60.95208333333329" y="834.5">utils.JsonLoader</node>
+                <node x="165.95833333333331" y="0.0">model.PNObject</node>
+                <node x="87.45833333333331" y="145.0">model.Transition</node>
+                <node x="380.86875" y="211.5">model.Location</node>
+                <node x="307.03541666666666" y="712.0">simulator.Simulator</node>
+                <node x="25.1875" y="521.5">utils.MappingHandler</node>
+                <node x="246.1375" y="1058.0">Main</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="simulator.Simulator" target="model.Transition">
+                  <point x="-100.875" y="-148.0" />
+                  <point x="340.66041666666666" y="682.0" />
+                  <point x="0.0" y="682.0" />
+                  <point x="0.0" y="414.0" />
+                  <point x="104.79166666666666" y="414.0" />
+                  <point x="-86.66666666666666" y="114.5" />
+                </edge>
+                <edge source="model.Location" target="model.PNObject">
+                  <point x="5.6843418860808015E-14" y="-48.0" />
+                  <point x="484.86875000000003" y="120.0" />
+                  <point x="295.125" y="120.0" />
+                  <point x="51.66666666666666" y="47.5" />
+                </edge>
+                <edge source="utils.JsonLoader" target="utils.MappingHandler">
+                  <point x="-50.24999999999997" y="-25.5" />
+                  <point x="111.20208333333332" y="692.0" />
+                  <point x="175.6875" y="692.0" />
+                  <point x="0.0" y="36.5" />
+                </edge>
+                <edge source="simulator.Simulator" target="model.Location">
+                  <point x="100.875" y="-148.0" />
+                  <point x="542.4104166666666" y="692.0" />
+                  <point x="605.4083333333333" y="692.0" />
+                  <point x="605.4083333333333" y="424.0" />
+                  <point x="571.5354166666666" y="424.0" />
+                  <point x="86.66666666666669" y="48.0" />
+                </edge>
+                <edge source="Main" target="simulator.Simulator">
+                  <point x="21.0" y="-25.5" />
+                  <point x="351.1375" y="1038.0" />
+                  <point x="374.28541666666666" y="1038.0" />
+                  <point x="-67.25" y="148.0" />
+                </edge>
+                <edge source="utils.MappingHandler" target="model.Transition">
+                  <point x="-112.875" y="-36.5" />
+                  <point x="62.8125" y="424.0" />
+                  <point x="139.45833333333331" y="424.0" />
+                  <point x="-52.0" y="114.5" />
+                </edge>
+                <edge source="model.Transition" target="model.PNObject">
+                  <point x="-51.99999999999997" y="-114.5" />
+                  <point x="139.45833333333334" y="120.0" />
+                  <point x="191.79166666666666" y="120.0" />
+                  <point x="-51.66666666666666" y="47.5" />
+                </edge>
+                <edge source="utils.JsonLoader" target="simulator.PetriNet">
+                  <point x="50.25000000000003" y="-25.5" />
+                  <point x="211.70208333333332" y="692.0" />
+                  <point x="386.5208333333333" y="692.0" />
+                  <point x="-80.66666666666669" y="104.0" />
+                </edge>
+                <edge source="simulator.PetriNet" target="model.Location">
+                  <point x="60.49999999999994" y="-104.0" />
+                  <point x="527.6875" y="434.0" />
+                  <point x="502.2020833333333" y="434.0" />
+                  <point x="17.333333333333314" y="48.0" />
+                </edge>
+                <edge source="utils.MappingHandler" target="model.Location">
+                  <point x="37.625" y="-36.5" />
+                  <point x="213.3125" y="424.0" />
+                  <point x="398.2020833333333" y="424.0" />
+                  <point x="-86.66666666666669" y="48.0" />
+                </edge>
+                <edge source="Main" target="utils.JsonLoader">
+                  <point x="-63.0" y="-25.5" />
+                  <point x="267.1375" y="1038.0" />
+                  <point x="111.20208333333329" y="1038.0" />
+                  <point x="-50.25" y="25.5" />
+                </edge>
+                <edge source="simulator.PetriNet" target="model.Transition">
+                  <point x="-20.166666666666686" y="-104.0" />
+                  <point x="447.0208333333333" y="394.0" />
+                  <point x="278.125" y="394.0" />
+                  <point x="86.66666666666666" y="114.5" />
+                </edge>
+                <edge source="simulator.Simulator" target="simulator.PetriNet">
+                  <point x="33.625" y="-148.0" />
+                  <point x="475.16041666666666" y="682.0" />
+                  <point x="547.8541666666667" y="682.0" />
+                  <point x="80.66666666666669" y="104.0" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="0.8661257606490872" x="229.5" y="779.8337236533957" />
+              <SelectedNodes />
+              <Categories>
+                <Category>Fields</Category>
+                <Category>Constructors</Category>
+                <Category>Methods</Category>
+                <Category>Properties</Category>
+                <Category>Inner Classes</Category>
+              </Categories>
+              <SCOPE>All</SCOPE>
+              <VISIBILITY>private</VISIBILITY>
             </state>
           </provider>
         </entry>
@@ -83,7 +198,7 @@
         <entry file="file://$PROJECT_DIR$/src/simulator/Simulator.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="265">
-              <caret line="111" column="27" selection-start-line="111" selection-start-column="27" selection-end-line="111" selection-end-column="27" />
+              <caret line="110" column="27" selection-start-line="110" selection-start-column="27" selection-end-line="110" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#436#437#0" expanded="true" />
@@ -100,20 +215,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-526">
               <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/FileSaver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#642#643#0" expanded="true" />
-                <element signature="e#677#678#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -233,7 +334,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572894326423" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572895172260" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/libraries/json-simple-1.1.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
@@ -278,12 +379,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1572708353594</updated>
-      <workItem from="1572887384289" duration="6824000" />
+      <workItem from="1572887384289" duration="7847000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6824000" />
+    <option name="totallyTimeSpent" value="7847000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
@@ -294,16 +395,16 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2543624" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2543624" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Messages" sideWeight="0.49932885" weight="0.32867134" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" sideWeight="0.50067115" side_tool="true" visible="true" weight="0.33146852" />
+      <window_info anchor="bottom" id="Event Log" sideWeight="0.50201344" side_tool="true" visible="true" weight="0.08111888" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49932885" weight="0.32867134" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4986577" weight="0.33146852" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49798658" visible="true" weight="0.08111888" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -402,7 +503,7 @@
     <entry file="file://$PROJECT_DIR$/src/simulator/Simulator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="265">
-          <caret line="111" column="27" selection-start-line="111" selection-start-column="27" selection-end-line="111" selection-end-column="27" />
+          <caret line="110" column="27" selection-start-line="110" selection-start-column="27" selection-end-line="110" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#436#437#0" expanded="true" />
@@ -415,11 +516,125 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="13" column="47" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
+        <state relative-caret-position="391">
+          <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="346.1875" y="454.0">simulator.PetriNet</node>
+            <node x="60.95208333333329" y="834.5">utils.JsonLoader</node>
+            <node x="165.95833333333331" y="0.0">model.PNObject</node>
+            <node x="87.45833333333331" y="145.0">model.Transition</node>
+            <node x="380.86875" y="211.5">model.Location</node>
+            <node x="307.03541666666666" y="712.0">simulator.Simulator</node>
+            <node x="25.1875" y="521.5">utils.MappingHandler</node>
+            <node x="246.1375" y="1058.0">Main</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="simulator.Simulator" target="model.Transition">
+              <point x="-100.875" y="-148.0" />
+              <point x="340.66041666666666" y="682.0" />
+              <point x="0.0" y="682.0" />
+              <point x="0.0" y="414.0" />
+              <point x="104.79166666666666" y="414.0" />
+              <point x="-86.66666666666666" y="114.5" />
+            </edge>
+            <edge source="model.Location" target="model.PNObject">
+              <point x="5.6843418860808015E-14" y="-48.0" />
+              <point x="484.86875000000003" y="120.0" />
+              <point x="295.125" y="120.0" />
+              <point x="51.66666666666666" y="47.5" />
+            </edge>
+            <edge source="utils.JsonLoader" target="utils.MappingHandler">
+              <point x="-50.24999999999997" y="-25.5" />
+              <point x="111.20208333333332" y="692.0" />
+              <point x="175.6875" y="692.0" />
+              <point x="0.0" y="36.5" />
+            </edge>
+            <edge source="simulator.Simulator" target="model.Location">
+              <point x="100.875" y="-148.0" />
+              <point x="542.4104166666666" y="692.0" />
+              <point x="605.4083333333333" y="692.0" />
+              <point x="605.4083333333333" y="424.0" />
+              <point x="571.5354166666666" y="424.0" />
+              <point x="86.66666666666669" y="48.0" />
+            </edge>
+            <edge source="Main" target="simulator.Simulator">
+              <point x="21.0" y="-25.5" />
+              <point x="351.1375" y="1038.0" />
+              <point x="374.28541666666666" y="1038.0" />
+              <point x="-67.25" y="148.0" />
+            </edge>
+            <edge source="utils.MappingHandler" target="model.Transition">
+              <point x="-112.875" y="-36.5" />
+              <point x="62.8125" y="424.0" />
+              <point x="139.45833333333331" y="424.0" />
+              <point x="-52.0" y="114.5" />
+            </edge>
+            <edge source="model.Transition" target="model.PNObject">
+              <point x="-51.99999999999997" y="-114.5" />
+              <point x="139.45833333333334" y="120.0" />
+              <point x="191.79166666666666" y="120.0" />
+              <point x="-51.66666666666666" y="47.5" />
+            </edge>
+            <edge source="utils.JsonLoader" target="simulator.PetriNet">
+              <point x="50.25000000000003" y="-25.5" />
+              <point x="211.70208333333332" y="692.0" />
+              <point x="386.5208333333333" y="692.0" />
+              <point x="-80.66666666666669" y="104.0" />
+            </edge>
+            <edge source="simulator.PetriNet" target="model.Location">
+              <point x="60.49999999999994" y="-104.0" />
+              <point x="527.6875" y="434.0" />
+              <point x="502.2020833333333" y="434.0" />
+              <point x="17.333333333333314" y="48.0" />
+            </edge>
+            <edge source="utils.MappingHandler" target="model.Location">
+              <point x="37.625" y="-36.5" />
+              <point x="213.3125" y="424.0" />
+              <point x="398.2020833333333" y="424.0" />
+              <point x="-86.66666666666669" y="48.0" />
+            </edge>
+            <edge source="Main" target="utils.JsonLoader">
+              <point x="-63.0" y="-25.5" />
+              <point x="267.1375" y="1038.0" />
+              <point x="111.20208333333329" y="1038.0" />
+              <point x="-50.25" y="25.5" />
+            </edge>
+            <edge source="simulator.PetriNet" target="model.Transition">
+              <point x="-20.166666666666686" y="-104.0" />
+              <point x="447.0208333333333" y="394.0" />
+              <point x="278.125" y="394.0" />
+              <point x="86.66666666666666" y="114.5" />
+            </edge>
+            <edge source="simulator.Simulator" target="simulator.PetriNet">
+              <point x="33.625" y="-148.0" />
+              <point x="475.16041666666666" y="682.0" />
+              <point x="547.8541666666667" y="682.0" />
+              <point x="80.66666666666669" y="104.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.8661257606490872" x="229.5" y="779.8337236533957" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>
