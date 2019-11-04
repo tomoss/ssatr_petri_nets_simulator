@@ -16,8 +16,8 @@ public class PetriNet {
         return instance;
     }
 
-    List<Location> locations = new ArrayList<Location>();
-    List<Transition> transitions = new ArrayList<Transition>();
+    private List<Location> locations = new ArrayList<Location>();
+    private List<Transition> transitions = new ArrayList<Transition>();
 
     public void addLocation(Location location){
         locations.add(location);

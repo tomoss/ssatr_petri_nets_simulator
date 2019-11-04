@@ -2,7 +2,7 @@ package model;
 
 public class Location extends PNObject {
 
-    int tokens;
+    private int tokens;
 
     public int getTokens() {
         return tokens;

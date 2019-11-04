@@ -4,26 +4,19 @@ import java.util.Random;
 
 public class Transition extends PNObject{
 
-    int minTime;
-    int maxTime;
-    int delay;
-    int tempTokens;
+    private int minTime;
+    private int maxTime;
+    private int delay;
+    private int tempTokens;
 
     public Transition(){
         delay = 0;
-    }
-
-    public int getMinTime() {
-        return minTime;
     }
 
     public void setMinTime(int minTime) {
         this.minTime = minTime;
     }
 
-    public int getMaxTime() {
-        return maxTime;
-    }
 
     public void setMaxTime(int maxTime) {
         this.maxTime = maxTime;
@@ -35,10 +28,6 @@ public class Transition extends PNObject{
 
     public int getTempTokens() {
         return tempTokens;
-    }
-
-    public void setTempTokens(int tempTokens) {
-        this.tempTokens = tempTokens;
     }
 
     public void addTempToken(){

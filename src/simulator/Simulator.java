@@ -9,10 +9,9 @@ import java.io.PrintWriter;
 
 public class Simulator {
 
-    int steps;
-    PetriNet petriNet = PetriNet.getInstance();
-    FileWriter fileWriter;
-    PrintWriter printWriter;
+    private int steps;
+    private FileWriter fileWriter;
+    private PrintWriter printWriter;
 
     public Simulator(String fileName) throws IOException {
         fileWriter = new FileWriter(fileName);
@@ -23,21 +22,21 @@ public class Simulator {
         this.steps = steps;
     }
 
-    boolean checkInputTokens(Transition transition){
+    private boolean checkInputTokens(Transition transition){
         boolean status = true;
         if(transition.getInput().size() == 0)
             return false;
         for(int i = 0; i < transition.getInput().size(); i++){
-            Location location = petriNet.getLocationById(transition.getInput().get(i));
+            Location location = PetriNet.getInstance().getLocationById(transition.getInput().get(i));
             if(location.getTokens() == 0)
                 status = false;
         }
         return status;
     }
 
-    void takeInputTokens(Transition transition){
+    private void takeInputTokens(Transition transition){
         for(int i = 0; i < transition.getInput().size(); i++){
-            Location location = petriNet.getLocationById(transition.getInput().get(i));
+            Location location = PetriNet.getInstance().getLocationById(transition.getInput().get(i));
             if(location.decreaseTokens())
                 System.out.println("Token token from "+location.getId());
 
@@ -49,12 +48,12 @@ public class Simulator {
         transition.setDelay();
     }
 
-    void putOutputTokens(Transition transition){
+    private void putOutputTokens(Transition transition){
         if(transition.getDelay() == 0) {
             if (transition.decreaseTokens()) {
                 System.out.println("Temp token taken from " + transition.getId());
                 for (int i = 0; i < transition.getOutput().size(); i++) {
-                    Location location = petriNet.getLocationById(transition.getOutput().get(i));
+                    Location location = PetriNet.getInstance().getLocationById(transition.getOutput().get(i));
                     location.addToken();
                     System.out.println("Token added in " + location.getId());
                 }
@@ -66,10 +65,10 @@ public class Simulator {
         }
     }
 
-    void checkAllTransitions(){
-        for (int i = 0; i < petriNet.getTransitions().size(); i++) {
+    private void checkAllTransitions(){
+        for (int i = 0; i < PetriNet.getInstance().getTransitions().size(); i++) {
 
-            Transition transition = petriNet.getTransitions().get(i);
+            Transition transition = PetriNet.getInstance().getTransitions().get(i);
 
             if(transition.getDelay() > 0){
                 transition.decreaseDelay();
@@ -85,8 +84,8 @@ public class Simulator {
             } else
                 System.out.println("Transition "+transition.getId()+" already activated");
         }
-        for (int i = 0; i < petriNet.getTransitions().size(); i++) {
-            Transition transition = petriNet.getTransitions().get(i);
+        for (int i = 0; i < PetriNet.getInstance().getTransitions().size(); i++) {
+            Transition transition = PetriNet.getInstance().getTransitions().get(i);
             putOutputTokens(transition);
         }
     }
@@ -98,16 +97,16 @@ public class Simulator {
         }
     }
 
-    void printPnState(int i){
+    private void printPnState(int i){
         System.out.println();
         printWriter.print("STEP "+i+" : ");
-        petriNet.locations.forEach(location ->{
+        PetriNet.getInstance().getLocations().forEach(location ->{
             System.out.print("| "+location.getId() + ": "+location.getTokens()+" ");
             printWriter.print("| "+location.getId() + ": "+location.getTokens()+" ");
         });
         printWriter.println();
         System.out.println();
-        petriNet.transitions.forEach(transition -> System.out.print("| "+transition.getId()+" : "+transition.getTempTokens()+" "));
+        PetriNet.getInstance().getTransitions().forEach(transition -> System.out.print("| "+transition.getId()+" : "+transition.getTempTokens()+" "));
         System.out.println();
         System.out.println();
 

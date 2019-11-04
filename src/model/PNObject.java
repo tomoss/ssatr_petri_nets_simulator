@@ -5,9 +5,9 @@ import java.util.List;
 
 public class PNObject {
 
-    String id;
-    List<String> input = new ArrayList<String>();
-    List<String> output = new ArrayList<String>();
+    protected String id;
+    protected List<String> input = new ArrayList<String>();
+    protected List<String> output = new ArrayList<String>();
 
     public String getId() {
         return id;
