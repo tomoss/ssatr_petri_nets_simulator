@@ -10,13 +10,6 @@ import java.io.PrintWriter;
 public class Simulator {
 
     private int steps;
-    private FileWriter fileWriter;
-    private PrintWriter printWriter;
-
-    public Simulator(String fileName) throws IOException {
-        fileWriter = new FileWriter(fileName);
-        printWriter = new PrintWriter(fileWriter);
-    }
 
     public void setSteps(int steps) {
         this.steps = steps;
@@ -90,15 +83,14 @@ public class Simulator {
         }
     }
 
-    public void simulatePetriNet(){
+    public void simulatePetriNet(PrintWriter printWriter){
         for(int i = 0; i < steps; i++){
-            printPnState(i);
+            printPetriNetState(i, printWriter);
             checkAllTransitions();
         }
     }
 
-    private void printPnState(int i){
-        System.out.println();
+    private void printPetriNetState(int i, PrintWriter printWriter){
         printWriter.print("STEP "+i+" : ");
         PetriNet.getInstance().getLocations().forEach(location ->{
             System.out.print("| "+location.getId() + ": "+location.getTokens()+" ");
@@ -106,17 +98,9 @@ public class Simulator {
         });
         printWriter.println();
         System.out.println();
-        PetriNet.getInstance().getTransitions().forEach(transition -> System.out.print("| "+transition.getId()+" : "+transition.getTempTokens()+" "));
+        PetriNet.getInstance().getTransitions().forEach(
+                transition -> System.out.print("| "+transition.getId()+" : "+transition.getTempTokens()+" ")
+        );
         System.out.println();
-        System.out.println();
-
     }
-
-    public void closeFile(){
-        printWriter.close();
-    }
-
-
-
-
 }
