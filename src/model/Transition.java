@@ -44,7 +44,7 @@ public class Transition extends PNObject{
     }
 
     public void setDelay(){
-        if(minTime == 0 && minTime == 0){
+        if(minTime == 0 && maxTime == 0){
             System.out.println(id+" has no delay!");
         } else {
             Random r = new Random();
